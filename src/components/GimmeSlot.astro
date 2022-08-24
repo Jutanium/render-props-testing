@@ -1,0 +1,18 @@
+---
+const prefix = "Mr.";
+const html =
+    Astro.slots.has("title") && (await Astro.slots.render("title", [prefix]));
+---
+
+<div>
+    <div class="title">
+        <Fragment set:html={html} />
+    </div>
+    <div class="profile">🐻</div>
+</div>
+
+<style>
+    .profile {
+        font-size: 60pt;
+    }
+</style>

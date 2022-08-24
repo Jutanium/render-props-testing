@@ -1,0 +1,17 @@
+---
+const prefix = "Mr. ";
+const html = (await Astro.slots.render("title"), [prefix]);
+---
+
+<div>
+    <div class="title">
+        <Fragment set:html={html} />
+    </div>
+    <div class="profile">🐻</div>
+</div>
+
+<style>
+    .profile {
+        font-size: 60pt;
+    }
+</style>

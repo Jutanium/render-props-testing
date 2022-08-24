@@ -1,0 +1,40 @@
+---
+import GimmeSlot from "../components/GimmeSlot.astro";
+import GimmeFunctionSlot from "../components/GimmeFunctionSlot.astro";
+import GimmeDefaultFunctionSlot from "../components/GimmeDefaultFunctionSlot.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<GimmeSlot>
+			<h1 slot="title">Fuzzy</h1>
+		</GimmeSlot>
+		<GimmeFunctionSlot>
+			<h1 slot="title">Fuzzy</h1>
+		</GimmeFunctionSlot>
+		<GimmeFunctionSlot>
+			<h1 slot="title">
+				{(prefix) => <span>{prefix + "Fuzzy"}</span>}
+			</h1>
+		</GimmeFunctionSlot>
+		<GimmeDefaultFunctionSlot
+			>test without function</GimmeDefaultFunctionSlot
+		>
+		<GimmeDefaultFunctionSlot
+			>{
+				(foo, bar) => (
+					<div>
+						{foo} {bar}
+					</div>
+				)
+			}
+		</GimmeDefaultFunctionSlot>
+	</body>
+</html>
